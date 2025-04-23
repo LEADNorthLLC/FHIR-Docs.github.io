@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Medicalclaims - LEAD North FHIR Documentation</title>
+        <title>Doc Specs - LEAD North FHIR Documentation</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -38,17 +38,32 @@
                                 <a href="../.." class="nav-link">General FHIR</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../../doc/" class="nav-link">Doc Specs</a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="../../onboarding/" class="nav-link">Onboarding</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Fhir</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">FHIR Catagories</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Medicalclaims</a>
+    <a href="../../FHIR-Catagories/medicalclaims/" class="dropdown-item">Medical Claims</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Feeds</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Feeds/prisma/" class="dropdown-item">Prisma</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Internal</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Doc Specs</a>
 </li>
                                 </ul>
                             </li>
@@ -61,7 +76,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../onboarding/" class="nav-link">
+                                <a rel="prev" href="../../Feeds/prisma/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -88,8 +103,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#medical-claims" class="nav-link">Medical Claims</a>
+            <li class="nav-item" data-bs-level="1"><a href="#doc-specs" class="nav-link">Doc Specs</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -97,7 +116,14 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="medical-claims">Medical Claims</h2></div>
+<h1 id="doc-specs">Doc Specs</h1>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>cd GITHUB_USERNAME.github.io</code> </li>
+<li><code>mkdocs gh-deploy --config-file ../mkdocs.yml --remote-branch main</code> </li>
+<li><code>cd ..</code> - Leave folder</li>
+</ul>
+<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p></div>
             </div>
         </div>
 

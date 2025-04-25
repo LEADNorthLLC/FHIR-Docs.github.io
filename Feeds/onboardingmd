@@ -1,0 +1,36 @@
+# Onboarding 
+
+## Onboarding a new feed
+
+### Identify Feed Type
+
+### Format Incoming Data
+
+`{
+    "Payload": Clients-Message
+}`
+
+## Update REST Map
+
+    BCBSSC.FHIR.REST.Api.RESTMap
+
+    ![alt text](image.png)
+
+
+## Add Business Service
+
+BCBSSC.FHIR.REST.Service
+
+## Add Business Process
+
+BCBSSC.FHIR.Inbound.Process
+
+## Add Business Process
+
+    (May be optional)
+
+### FHIR
+
+### HL7
+
+### CCD

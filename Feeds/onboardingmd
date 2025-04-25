@@ -25,9 +25,11 @@ BCBSSC.FHIR.REST.Service
 
 BCBSSC.FHIR.Inbound.Process
 
-## Add Business Process
+## Add Business Operation
 
-    (May be optional)
+    This step is the only one that changes based on the message type that the feed is ingesting. 
+
+    Depending on the site the operation may have already been created to ingest an existing feed.  
 
 ### FHIR
 

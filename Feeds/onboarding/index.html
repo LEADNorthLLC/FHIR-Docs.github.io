@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Medical Claims - LEAD North FHIR Documentation</title>
+        <title>Onboarding - LEAD North FHIR Documentation</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -41,28 +41,28 @@
                                 <a href="../../onboarding/" class="nav-link">Onboarding</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">FHIR Resources</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">FHIR Resources</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../" class="dropdown-item">FHIR Resources</a>
+    <a href="../../FHIR-Resources/" class="dropdown-item">FHIR Resources</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Medical Claims</a>
+    <a href="../../FHIR-Resources/medicalclaims/" class="dropdown-item">Medical Claims</a>
 </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Feeds</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Feeds</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Feeds/onboarding/" class="dropdown-item">Onboarding</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Onboarding</a>
 </li>
                                     
 <li>
-    <a href="../../Feeds/prisma/" class="dropdown-item">Prisma</a>
+    <a href="../prisma/" class="dropdown-item">Prisma</a>
 </li>
                                 </ul>
                             </li>
@@ -84,12 +84,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../" class="nav-link">
+                                <a rel="prev" href="../../FHIR-Resources/medicalclaims/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../Feeds/onboarding/" class="nav-link">
+                                <a rel="next" href="../prisma/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -111,8 +111,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#medical-claims" class="nav-link">Medical Claims</a>
+            <li class="nav-item" data-bs-level="1"><a href="#onboarding" class="nav-link">Onboarding</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#onboarding-a-new-feed" class="nav-link">Onboarding a new feed</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#update-rest-map" class="nav-link">Update REST Map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#add-business-service" class="nav-link">Add Business Service</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#add-business-process" class="nav-link">Add Business Process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#add-business-operation" class="nav-link">Add Business Operation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -120,7 +140,33 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="medical-claims">Medical Claims</h1></div>
+<h1 id="onboarding">Onboarding</h1>
+<h2 id="onboarding-a-new-feed">Onboarding a new feed</h2>
+<h3 id="identify-feed-type">Identify Feed Type</h3>
+<h3 id="format-incoming-data">Format Incoming Data</h3>
+<p><code>{
+    "Payload": Clients-Message
+}</code></p>
+<h2 id="update-rest-map">Update REST Map</h2>
+<pre><code>`BCBSSC.FHIR.REST.Api.RESTMap`
+
+![alt text](image.png)
+</code></pre>
+<h2 id="add-business-service">Add Business Service</h2>
+<p><code>BCBSSC.FHIR.REST.Service</code></p>
+<h2 id="add-business-process">Add Business Process</h2>
+<p><code>BCBSSC.FHIR.Inbound.Process</code></p>
+<h2 id="add-business-operation">Add Business Operation</h2>
+<pre><code>This step is the only one that changes based on the message type that the feed is ingesting.
+
+Depending on the site the operation may have already been created to ingest an existing feed.
+</code></pre>
+<h3 id="fhir">FHIR</h3>
+<p><code>HS.Gateway.HL7.InboundProcess</code></p>
+<h3 id="hl7">HL7</h3>
+<p><code>HS.Gateway.HL7.InboundProcess</code></p>
+<h3 id="ccd">CCD</h3>
+<p><code>BCBSSC.IHE.XDSb.ContentConsumer.Operations</code></p></div>
             </div>
         </div>
 

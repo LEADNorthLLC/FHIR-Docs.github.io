@@ -142,31 +142,51 @@
 
 <h1 id="onboarding">Onboarding</h1>
 <h2 id="onboarding-a-new-feed">Onboarding a new feed</h2>
+<pre><code>This guide is to explain the process of creating a new data feed that uses FHIR or REST endpoints to injest their data.
+</code></pre>
 <h3 id="identify-feed-type">Identify Feed Type</h3>
+<pre><code>Identify whether the feed type is one of the following: HL7, FHIR, or CCD. This process is set up to dynamically handle those feed types. The only customizing needed for different feed types is in the creation of Operations, which will be covered later on.
+
+If your feed type is not one of those three, then the process will need to be added to.
+</code></pre>
 <h3 id="format-incoming-data">Format Incoming Data</h3>
+<p>The onboarding process requires HTTP messages to have the following body structure:</p>
 <p><code>{
     "Payload": Clients-Message
 }</code></p>
+<p>This will require communication with the client to make sure they are structuring their messages correctly.</p>
 <h2 id="update-rest-map">Update REST Map</h2>
+<p>The one section of code you need to edit is the following class:</p>
 <pre><code>`BCBSSC.FHIR.REST.Api.RESTMap`
-
-![alt text](image.png)
+</code></pre>
+<p>You need to add a new map for your new feed. Copy the \demo Map and change \demo to the name of your new feed.</p>
+<pre><code>![alt text](image.png)
 </code></pre>
 <h2 id="add-business-service">Add Business Service</h2>
+<p>Create a new business service with the following class. </p>
 <p><code>BCBSSC.FHIR.REST.Service</code></p>
+<p>Set the name of the service to be the class name. Keep all settings as default and enable this service. </p>
 <h2 id="add-business-process">Add Business Process</h2>
+<p>Create a new business process with the following class. </p>
 <p><code>BCBSSC.FHIR.Inbound.Process</code></p>
+<p>Set the name of the process to be the class name. Keep all settings as default and enable this process. </p>
 <h2 id="add-business-operation">Add Business Operation</h2>
 <pre><code>This step is the only one that changes based on the message type that the feed is ingesting.
 
 Depending on the site the operation may have already been created to ingest an existing feed.
 </code></pre>
 <h3 id="fhir">FHIR</h3>
+<p>Create a new business operation with the following class. </p>
 <p><code>HS.Gateway.HL7.InboundProcess</code></p>
+<p>Set the name of the operation to be the class name.</p>
 <h3 id="hl7">HL7</h3>
+<p>Create a new business operation with the following class. </p>
 <p><code>HS.Gateway.HL7.InboundProcess</code></p>
+<p>Set the name of the operation to be the class name.</p>
 <h3 id="ccd">CCD</h3>
-<p><code>BCBSSC.IHE.XDSb.ContentConsumer.Operations</code></p></div>
+<p>Create a new business operation with the following class. </p>
+<p><code>BCBSSC.IHE.XDSb.ContentConsumer.Operations</code></p>
+<p>Set the name of the operation to be the class name.</p></div>
             </div>
         </div>
 

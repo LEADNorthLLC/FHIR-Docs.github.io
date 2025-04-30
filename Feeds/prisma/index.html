@@ -197,8 +197,7 @@
 <li>Transformation to Spreadsheet/Columnar format </li>
 <li>Possible return message</li>
 </ol>
-<p><Include a process flow diagram of proposed process></p>
-<p>Prisma -&gt; FHIR inbound -&gt; Route to edge -&gt; Transform to object -&gt; Normalize values -&gt; Append to spreadsheet  </p>
+<p><img alt="alt text" src="../Prisma.drawio.png" /></p>
 <h4 id="inbound-fhir-connection">Inbound FHIR Connection</h4>
 <p>For FHIR, for connections outbound (BCBSSC to external FHIR server), we would need the connection details from the provider. </p>
 <p>STAGE: https://router.stage.sdsexchangeplatform.com/esb
@@ -224,44 +223,45 @@ PROD: https://router.sdsexchangeplatform.com/esb</p>
 </table>
 <p>Authentication for FHIR is typically through OAuth and an identify provider. Alternatively, we can provide and maintain login credentials. </p>
 <h3 id="source-data-format">Source Data Format</h3>
-<p><ChargeItem xmlns="http://hl7.org/fhir">
- <!-- from Resource: id, meta, implicitRules, and language --></p>
-<!-- from DomainResource: text, contained, extension, and modifierExtension -->
-<p><identifier><!-- 0..* Identifier Business Identifier for item --></identifier>
- <definitionUri value="[uri]"/><!-- 0..* Defining information about the code of this charge item -->
- <definitionCanonical><!-- 0..* canonical(ChargeItemDefinition) Resource defining the code of this ChargeItem --></definitionCanonical>
- <status value="[code]"/><!-- 1..1 planned | billable | not-billable | aborted | billed | entered-in-error | unknown -->
- <partOf><!-- 0..* Reference(ChargeItem) Part of referenced ChargeItem --></partOf>
- <code><!-- 1..1 CodeableConcept A code that identifies the charge, like a billing code --></code>
- <subject><!-- 1..1 Reference(Group|Patient) Individual service was done for/to --></subject>
- <encounter><!-- 0..1 Reference(Encounter) Encounter associated with this ChargeItem --></encounter>
- <occurrence[x]><!-- 0..1 dateTime|Period|Timing When the charged service was applied --></occurrence[x]>
- <performer>  <!-- 0..* Who performed charged service -->
-  <function><!-- 0..1 CodeableConcept What type of performance was done --></function>
-  <actor><!-- 1..1 Reference(CareTeam|Device|HealthcareService|Organization|
-    Patient|Practitioner|PractitionerRole|RelatedPerson) Individual who was performing --></actor>
- </performer>
- <performingOrganization><!-- 0..1 Reference(Organization) Organization providing the charged service --></performingOrganization>
- <requestingOrganization><!-- 0..1 Reference(Organization) Organization requesting the charged service --></requestingOrganization>
- <costCenter><!-- 0..1 Reference(Organization) Organization that has ownership of the (potential, future) revenue --></costCenter>
- <quantity><!-- 0..1 Quantity Quantity of which the charge item has been serviced --></quantity>
- <bodysite><!-- 0..* CodeableConcept Anatomical location, if relevant --></bodysite>
- <unitPriceComponent><!-- 0..1 MonetaryComponent Unit price overriding the associated rules --></unitPriceComponent>
- <totalPriceComponent><!-- 0..1 MonetaryComponent Total price overriding the associated rules --></totalPriceComponent>
- <overrideReason><!-- 0..1 CodeableConcept Reason for overriding the list price/factor --></overrideReason>
- <enterer><!-- 0..1 Reference(Device|Organization|Patient|Practitioner|
-   PractitionerRole|RelatedPerson) Individual who was entering --></enterer>
- <enteredDate value="[dateTime]"/><!-- 0..1 Date the charge item was entered -->
- <reason><!-- 0..* CodeableReference(Condition|DiagnosticReport|
-   ImmunizationRecommendation|Observation|Procedure) Why was the charged  service rendered? --></reason>
- <service><!-- 0..* CodeableReference(DiagnosticReport|ImagingStudy|Immunization|
+<pre><code>&lt;ChargeItem xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+ &lt;!-- from Resource: id, meta, implicitRules, and language --&gt;
+ &lt;!-- from DomainResource: text, contained, extension, and modifierExtension --&gt;
+ &lt;identifier&gt;&lt;!-- 0..* Identifier Business Identifier for item --&gt;&lt;/identifier&gt;
+ &lt;definitionUri value=&quot;[uri]&quot;/&gt;&lt;!-- 0..* Defining information about the code of this charge item --&gt;
+ &lt;definitionCanonical&gt;&lt;!-- 0..* canonical(ChargeItemDefinition) Resource defining the code of this ChargeItem --&gt;&lt;/definitionCanonical&gt;
+ &lt;status value=&quot;[code]&quot;/&gt;&lt;!-- 1..1 planned | billable | not-billable | aborted | billed | entered-in-error | unknown --&gt;
+ &lt;partOf&gt;&lt;!-- 0..* Reference(ChargeItem) Part of referenced ChargeItem --&gt;&lt;/partOf&gt;
+ &lt;code&gt;&lt;!-- 1..1 CodeableConcept A code that identifies the charge, like a billing code --&gt;&lt;/code&gt;
+ &lt;subject&gt;&lt;!-- 1..1 Reference(Group|Patient) Individual service was done for/to --&gt;&lt;/subject&gt;
+ &lt;encounter&gt;&lt;!-- 0..1 Reference(Encounter) Encounter associated with this ChargeItem --&gt;&lt;/encounter&gt;
+ &lt;occurrence[x]&gt;&lt;!-- 0..1 dateTime|Period|Timing When the charged service was applied --&gt;&lt;/occurrence[x]&gt;
+ &lt;performer&gt;  &lt;!-- 0..* Who performed charged service --&gt;
+  &lt;function&gt;&lt;!-- 0..1 CodeableConcept What type of performance was done --&gt;&lt;/function&gt;
+  &lt;actor&gt;&lt;!-- 1..1 Reference(CareTeam|Device|HealthcareService|Organization|
+    Patient|Practitioner|PractitionerRole|RelatedPerson) Individual who was performing --&gt;&lt;/actor&gt;
+ &lt;/performer&gt;
+ &lt;performingOrganization&gt;&lt;!-- 0..1 Reference(Organization) Organization providing the charged service --&gt;&lt;/performingOrganization&gt;
+ &lt;requestingOrganization&gt;&lt;!-- 0..1 Reference(Organization) Organization requesting the charged service --&gt;&lt;/requestingOrganization&gt;
+ &lt;costCenter&gt;&lt;!-- 0..1 Reference(Organization) Organization that has ownership of the (potential, future) revenue --&gt;&lt;/costCenter&gt;
+ &lt;quantity&gt;&lt;!-- 0..1 Quantity Quantity of which the charge item has been serviced --&gt;&lt;/quantity&gt;
+ &lt;bodysite&gt;&lt;!-- 0..* CodeableConcept Anatomical location, if relevant --&gt;&lt;/bodysite&gt;
+ &lt;unitPriceComponent&gt;&lt;!-- 0..1 MonetaryComponent Unit price overriding the associated rules --&gt;&lt;/unitPriceComponent&gt;
+ &lt;totalPriceComponent&gt;&lt;!-- 0..1 MonetaryComponent Total price overriding the associated rules --&gt;&lt;/totalPriceComponent&gt;
+ &lt;overrideReason&gt;&lt;!-- 0..1 CodeableConcept Reason for overriding the list price/factor --&gt;&lt;/overrideReason&gt;
+ &lt;enterer&gt;&lt;!-- 0..1 Reference(Device|Organization|Patient|Practitioner|
+   PractitionerRole|RelatedPerson) Individual who was entering --&gt;&lt;/enterer&gt;
+ &lt;enteredDate value=&quot;[dateTime]&quot;/&gt;&lt;!-- 0..1 Date the charge item was entered --&gt;
+ &lt;reason&gt;&lt;!-- 0..* CodeableReference(Condition|DiagnosticReport|
+   ImmunizationRecommendation|Observation|Procedure) Why was the charged  service rendered? --&gt;&lt;/reason&gt;
+ &lt;service&gt;&lt;!-- 0..* CodeableReference(DiagnosticReport|ImagingStudy|Immunization|
    MedicationAdministration|MedicationDispense|MedicationRequest|Observation|
-   Procedure|ServiceRequest|SupplyDelivery) Which rendered service is being charged? --></service>
- <product><!-- 0..* CodeableReference(Device|Medication|Substance) Product charged --></product>
- <account><!-- 0..* Reference(Account) Account to place this charge --></account>
- <note><!-- 0..* Annotation Comments made about the ChargeItem --></note>
- <supportingInformation><!-- 0..* Reference(Any) Further information supporting this charge --></supportingInformation>
-</ChargeItem></p>
+   Procedure|ServiceRequest|SupplyDelivery) Which rendered service is being charged? --&gt;&lt;/service&gt;
+ &lt;product&gt;&lt;!-- 0..* CodeableReference(Device|Medication|Substance) Product charged --&gt;&lt;/product&gt;
+ &lt;account&gt;&lt;!-- 0..* Reference(Account) Account to place this charge --&gt;&lt;/account&gt;
+ &lt;note&gt;&lt;!-- 0..* Annotation Comments made about the ChargeItem --&gt;&lt;/note&gt;
+ &lt;supportingInformation&gt;&lt;!-- 0..* Reference(Any) Further information supporting this charge --&gt;&lt;/supportingInformation&gt;
+&lt;/ChargeItem&gt;
+</code></pre>
 <h3 id="target-data-format">Target Data Format</h3>
 <table>
 <thead>
@@ -368,6 +368,7 @@ PROD: https://router.sdsexchangeplatform.com/esb</p>
 <p>Create new DTL's mapping ChargeItem to ChargeItem.</p>
 <h4 id="save-to-excel-spreadsheet">Save to Excel Spreadsheet</h4>
 <p>Append new row into existing spreadsheet using XLSX.writer</p>
+<h4 id="return-success">Return success</h4>
 <!-- #### Streamlet Cleanup?? -->
 
 <!-- ### Additional Requirements --></div>

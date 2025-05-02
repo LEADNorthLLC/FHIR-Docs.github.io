@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Prisma - LEAD North FHIR Documentation</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/fontawesome.min.css" rel="stylesheet">
-        <link href="../../css/brands.min.css" rel="stylesheet">
-        <link href="../../css/solid.min.css" rel="stylesheet">
-        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Itemized Billing - LEAD North FHIR Documentation</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">LEAD North FHIR Documentation</a>
+                <a class="navbar-brand" href="../../..">LEAD North FHIR Documentation</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,21 +35,21 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="../.." class="nav-link">Welcome</a>
+                                <a href="../../.." class="nav-link">Welcome</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../../onboarding/" class="nav-link">Onboarding</a>
+                                <a href="../../../onboarding/" class="nav-link">Onboarding</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">FHIR Resources</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../FHIR-Resources/" class="dropdown-item">FHIR Resources</a>
+    <a href="../../../FHIR-Resources/" class="dropdown-item">FHIR Resources</a>
 </li>
                                     
 <li>
-    <a href="../../FHIR-Resources/medicalclaims/" class="dropdown-item">Medical Claims</a>
+    <a href="../../../FHIR-Resources/medicalclaims/" class="dropdown-item">Medical Claims</a>
 </li>
                                 </ul>
                             </li>
@@ -58,12 +58,22 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../onboarding/" class="dropdown-item">Onboarding</a>
+    <a href="../../onboarding/" class="dropdown-item">Onboarding</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Prisma</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">Prisma</a>
+    <a href="../Prisma_CCD/" class="dropdown-item">CCD</a>
 </li>
+            
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Itemized Billing</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -71,7 +81,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Internal/" class="dropdown-item">Doc Specs</a>
+    <a href="../../../Internal/" class="dropdown-item">Doc Specs</a>
 </li>
                                 </ul>
                             </li>
@@ -84,12 +94,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../onboarding/" class="nav-link">
+                                <a rel="prev" href="../Prisma_CCD/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../Internal/" class="nav-link">
+                                <a rel="next" href="../../../Internal/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -111,7 +121,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#prisma" class="nav-link">Prisma</a>
+            <li class="nav-item" data-bs-level="1"><a href="#itemized-billing" class="nav-link">Itemized Billing</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -133,7 +143,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="prisma">Prisma</h1>
+<h1 id="itemized-billing">Itemized Billing</h1>
 <h1 id="integration-solution-design-prisma-inbound-fhir-implementation-guide">Integration Solution Design Prisma Inbound FHIR Implementation Guide</h1>
 <h2 id="blue-cross-blue-shield-of-south-carolina">Blue Cross Blue Shield of South Carolina</h2>
 <h2 id="document-controls">Document Controls</h2>
@@ -156,7 +166,7 @@
 <tr>
 <td>1.1</td>
 <td>04/29/2025</td>
-<td>Update to Markdown</td>
+<td>Update to Final Draft</td>
 <td>Nathan Holt</td>
 </tr>
 <tr>
@@ -169,7 +179,7 @@
 </table>
 <h3 id="introduction">Introduction</h3>
 <h4 id="purpose-of-document">Purpose of Document</h4>
-<p>The purpose of this Document is to outline an automation solution design for Prisma for Blue Cross Blue Shield of South Carolina. This project is a new integration that allows Prisma to support receiving facility charge details from hospitals across the country for anyone with a LOS greater than 10 days, all NICU admits, anyone with facility charges over $10k automatically via inbound FHIR.</p>
+<p>The purpose of this Document is to outline an automation solution design for Prisma for Blue Cross Blue Shield of South Carolina. This project is a new integration that allows Prisma to support receiving facility charge details from hospitals across the country for anyone with a LOS (Line of Service) greater than 10 days, all NICU admits, anyone with facility charges over $10k automatically via inbound FHIR.</p>
 <h4 id="intended-audience">Intended Audience</h4>
 <p>The intended audience for this document is the technical staff associated with the implementation, support and operational aspects of this solution.</p>
 <h4 id="scoping-questions">Scoping Questions</h4>
@@ -177,13 +187,18 @@
 <li>Connectivity: Are we connecting to Prisma (FHIR server/endpoint) to get resources? </li>
 <li>GET from Prisma? Or POST from Prisma to BCBSSC?</li>
 <li>How often? Or how is the transaction triggered? Schedule or event-driven.</li>
-<li>What is the format of the data? </li>
-<li>What FHIR resources? </li>
-<li>Bundle? (How many transactions per batch?)</li>
+<li>How many items are expected per batch? </li>
 <li>Is it a bulk transaction? &gt; 1000<ul>
 <li>Consider bulk FHIR</li>
 </ul>
 </li>
+<li>What is the format of the data? </li>
+<li>What FHIR resources? <ul>
+<li>Assuming ChargeItem</li>
+</ul>
+</li>
+<li>What are the selection criteria for Billing Data?</li>
+<li>Will we need to query based off of said criteria?</li>
 <li>Any expected normalization?</li>
 <li>Will the final file be a CSV or Excel?</li>
 <li>Will the file need to be sent anywhere or stored locally?</li>
@@ -197,12 +212,9 @@
 <li>Transformation to Spreadsheet/Columnar format </li>
 <li>Possible return message</li>
 </ol>
-<p><img alt="alt text" src="../Prisma.drawio.png" /></p>
-<h4 id="inbound-fhir-connection">Inbound FHIR Connection</h4>
-<p>For FHIR, for connections outbound (BCBSSC to external FHIR server), we would need the connection details from the provider. </p>
-<p>STAGE: https://router.stage.sdsexchangeplatform.com/esb
-PROD: https://router.sdsexchangeplatform.com/esb</p>
-<p>For connections inbound, external provider to BCBSSC, we would provide the endpoints and SSL certificate.</p>
+<p><img alt="Prisma workflow" src="Prisma.drawio (1).png" /></p>
+<h4 id="option-1-get-request-from-intersystems">Option 1: GET Request from InterSystems</h4>
+<p>For connections from BCBSSC to external FHIR server, external system provides endpoint. </p>
 <table>
 <thead>
 <tr>
@@ -214,15 +226,38 @@ PROD: https://router.sdsexchangeplatform.com/esb</p>
 </thead>
 <tbody>
 <tr>
-<td>Outbound</td>
+<td>Intersystem connects to external</td>
 <td>GET</td>
-<td>/chargeitem</td>
+<td>TBD - Provided by external</td>
 <td>HTTPS: provide certificates based on exchange direction, additional OAuth or client id/secret?</td>
 </tr>
 </tbody>
 </table>
-<p>Authentication for FHIR is typically through OAuth and an identify provider. Alternatively, we can provide and maintain login credentials. </p>
+<p>Authentication for FHIR is typically through OAuth 2.0 and SSL. </p>
+<h4 id="option-2-post-request-from-prisma">Option 2: POST Request from Prisma</h4>
+<p>For connections from external provider to BCBSSC, we would provide the endpoints and SSL certificate.</p>
+<table>
+<thead>
+<tr>
+<th>Connection direction</th>
+<th>Type</th>
+<th>Endpoint</th>
+<th>Authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>External connects to  InterSystems</td>
+<td>POST</td>
+<td>TBD - Provided by InterSystems</td>
+<td>HTTPS: provide certificates based on exchange direction, additional OAuth or client id/secret?</td>
+</tr>
+</tbody>
+</table>
+<p>Authentication for FHIR is typically through OAuth 2.0 and SSL. </p>
 <h3 id="source-data-format">Source Data Format</h3>
+<h4 id="currently-assuming-chargeitem-fhir-resource">Currently assuming ChargeItem FHIR Resource</h4>
+<p>link to spec</p>
 <pre><code>&lt;ChargeItem xmlns=&quot;http://hl7.org/fhir&quot;&gt;
  &lt;!-- from Resource: id, meta, implicitRules, and language --&gt;
  &lt;!-- from DomainResource: text, contained, extension, and modifierExtension --&gt;
@@ -359,19 +394,15 @@ PROD: https://router.sdsexchangeplatform.com/esb</p>
 </tr>
 </tbody>
 </table>
-<h3 id="transformation-logic">Transformation Logic</h3>
+<h3 id="transformation-logic-proposed">Transformation Logic (Proposed)</h3>
 <h4 id="transformation-code">Transformation Code</h4>
 <p>Create or use existing class to represent ChargeItem. </p>
 <p>Load data into new instance of this class. </p>
 <h4 id="normalization">Normalization</h4>
 <p>This is where additional transforms for normalization would be added to the ingestion process if needed. </p>
 <p>Create new DTL's mapping ChargeItem to ChargeItem.</p>
-<h4 id="save-to-excel-spreadsheet">Save to Excel Spreadsheet</h4>
-<p>Append new row into existing spreadsheet using XLSX.writer</p>
-<h4 id="return-success">Return success</h4>
-<!-- #### Streamlet Cleanup?? -->
-
-<!-- ### Additional Requirements --></div>
+<h4 id="save-to-csvspreadsheet">Save to CSV/Spreadsheet</h4>
+<p>Append new row into existing CSV or spread sheet.</p></div>
             </div>
         </div>
 
@@ -379,13 +410,13 @@ PROD: https://router.sdsexchangeplatform.com/esb</p>
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = "../..",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js"></script>
-        <script src="../../search/main.js"></script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

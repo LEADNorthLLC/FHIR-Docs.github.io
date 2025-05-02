@@ -173,6 +173,22 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#implementation-strategy" class="nav-link">Implementation Strategy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#source-data-format" class="nav-link">Source Data Format</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#target-data-format" class="nav-link">Target Data Format</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#transformation-logic-proposed" class="nav-link">Transformation Logic (Proposed)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -209,11 +225,11 @@
 </tbody>
 </table>
 <h2 id="introduction">Introduction</h2>
-<h4 id="purpose-of-document">Purpose of Document</h4>
+<h3 id="purpose-of-document">Purpose of Document</h3>
 <p>The purpose of this Document is to outline an automation solution design for Prisma for Blue Cross Blue Shield of South Carolina. This project is a new integration that allows Prisma to support receiving facility charge details from hospitals across the country for anyone with a LOS (Line of Service) greater than 10 days, all NICU admits, anyone with facility charges over $10k automatically via inbound FHIR.</p>
-<h4 id="intended-audience">Intended Audience</h4>
+<h3 id="intended-audience">Intended Audience</h3>
 <p>The intended audience for this document is the technical staff associated with the implementation, support and operational aspects of this solution.</p>
-<h4 id="scoping-questions">Scoping Questions</h4>
+<h3 id="scoping-questions">Scoping Questions</h3>
 <ul>
 <li>Connectivity: Are we connecting to Prisma (FHIR server/endpoint) to get resources? </li>
 <li>GET from Prisma? Or POST from Prisma to BCBSSC?</li>
@@ -236,7 +252,7 @@
   - Will the file need to be sent anywhere or stored locally?
   - How many records should be stored in each file? -->
 
-<h3 id="implementation-strategy">Implementation Strategy</h3>
+<h2 id="implementation-strategy">Implementation Strategy</h2>
 <ol>
 <li>Inbound FHIR connection </li>
 <li>Ingest Itemized Billing Data (ChargeItem Resource) message</li>
@@ -245,7 +261,7 @@
 <li>Possible return message</li>
 </ol>
 <p><img alt="Prisma workflow" src="../Prisma.drawio%20%281%29.png" /></p>
-<h4 id="option-1-get-request-from-intersystems">Option 1: GET Request from InterSystems</h4>
+<h3 id="option-1-get-request-from-intersystems">Option 1: GET Request from InterSystems</h3>
 <p>For connections from BCBSSC to external FHIR server, external system provides endpoint. </p>
 <table>
 <thead>
@@ -266,7 +282,7 @@
 </tbody>
 </table>
 <p>Authentication for FHIR is typically through OAuth 2.0 and SSL. </p>
-<h4 id="option-2-post-request-from-prisma">Option 2: POST Request from Prisma</h4>
+<h3 id="option-2-post-request-from-prisma">Option 2: POST Request from Prisma</h3>
 <p>For connections from external provider to BCBSSC, we would provide the endpoints and SSL certificate.</p>
 <table>
 <thead>
@@ -287,16 +303,16 @@
 </tbody>
 </table>
 <p>Authentication for FHIR is typically through OAuth 2.0 and SSL. </p>
-<h3 id="source-data-format">Source Data Format</h3>
-<h4 id="currently-assuming-chargeitem-fhir-resource">Currently assuming ChargeItem FHIR Resource</h4>
+<h2 id="source-data-format">Source Data Format</h2>
+<h3 id="currently-assuming-chargeitem-fhir-resource">Currently assuming ChargeItem FHIR Resource</h3>
 <p>link to spec</p>
 <pre><code>
 </code></pre>
-<h3 id="target-data-format">Target Data Format</h3>
-<h3 id="transformation-logic-proposed">Transformation Logic (Proposed)</h3>
-<h4 id="transformation-code">Transformation Code</h4>
-<h4 id="normalization">Normalization</h4>
-<h4 id="save-to-csvspreadsheet">Save to CSV/Spreadsheet</h4>
+<h2 id="target-data-format">Target Data Format</h2>
+<h2 id="transformation-logic-proposed">Transformation Logic (Proposed)</h2>
+<h3 id="transformation-code">Transformation Code</h3>
+<h3 id="normalization">Normalization</h3>
+<h3 id="save-to-csvspreadsheet">Save to CSV/Spreadsheet</h3>
 <p>Append new row into existing CSV or spread sheet.</p></div>
             </div>
         </div>

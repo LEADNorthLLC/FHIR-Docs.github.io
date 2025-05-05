@@ -249,7 +249,7 @@
 </table>
 <h2 id="introduction">Introduction</h2>
 <h3 id="purpose-of-document">Purpose of Document</h3>
-<p>The purpose of this Document is to outline an automation solution design for Prisma for Blue Cross Blue Shield of South Carolina. This project is a new integration that allows Prisma to support receiving facility charge details from hospitals across the country for anyone with a LOS (Line of Service) greater than 10 days, all NICU admits, anyone with facility charges over $10k automatically via inbound FHIR.</p>
+<p>The purpose of this Document is to outline an automation solution design for Prisma for Blue Cross Blue Shield of South Carolina. This project is a new integration that allows Prisma to support receiving facility CCD messages with the FHIR format. </p>
 <h3 id="intended-audience">Intended Audience</h3>
 <p>The intended audience for this document is the technical staff associated with the implementation, support and operational aspects of this solution.</p>
 <h3 id="scoping-questions">Scoping Questions</h3>
@@ -278,10 +278,10 @@
 <h2 id="implementation-strategy">Implementation Strategy</h2>
 <ol>
 <li>Inbound FHIR connection </li>
-<li>Ingest Itemized Billing Data (ChargeItem Resource) message</li>
+<li>Outbound Patient fetch</li>
+<li>Membercheck </li>
 <li>Transformations and Normalization </li>
-<li>Transformation to Spreadsheet/Columnar format </li>
-<li>Possible return message</li>
+<li>Ingest SDA</li>
 </ol>
 <p><img alt="Prisma workflow" src="../Prisma.drawio%20%281%29.png" /></p>
 <h3 id="option-1-get-request-from-intersystems">Option 1: GET Request from InterSystems</h3>
@@ -296,6 +296,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Intersystem connects to external</td>
+<td>GET</td>
+<td>TBD - Provided by external</td>
+<td>HTTPS: provide certificates based on exchange direction, additional OAuth or client id/secret?</td>
+</tr>
 <tr>
 <td>Intersystem connects to external</td>
 <td>GET</td>
@@ -323,6 +329,12 @@
 <td>TBD - Provided by InterSystems</td>
 <td>HTTPS: provide certificates based on exchange direction, additional OAuth or client id/secret?</td>
 </tr>
+<tr>
+<td>Intersystem connects to external</td>
+<td>GET</td>
+<td>TBD - Provided by external</td>
+<td>HTTPS: provide certificates based on exchange direction, additional OAuth or client id/secret?</td>
+</tr>
 </tbody>
 </table>
 <p>Authentication for FHIR is typically through OAuth 2.0 and SSL. </p>
@@ -334,9 +346,7 @@
 <h2 id="target-data-format">Target Data Format</h2>
 <h2 id="transformation-logic-proposed">Transformation Logic (Proposed)</h2>
 <h3 id="transformation-code">Transformation Code</h3>
-<h3 id="normalization">Normalization</h3>
-<h3 id="save-to-csvspreadsheet">Save to CSV/Spreadsheet</h3>
-<p>Append new row into existing CSV or spread sheet.</p></div>
+<h3 id="normalization">Normalization</h3></div>
             </div>
         </div>
 
